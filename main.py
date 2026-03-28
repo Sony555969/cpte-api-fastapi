@@ -15,6 +15,7 @@ from fastapi.staticfiles import StaticFiles
 from app.api.pdf_routes import router as pdf_router
 
 
+
 @asynccontextmanager
 async def lifespan(app:FastAPI):
     
@@ -66,16 +67,6 @@ def read_root():
 
 
 
-# stockage temporaire en mémoire
-fake_db: List[Stock_Carnet] = []
 
-@app.post("/carnets/", response_model=Stock_Carnet)
-def create_carnet(carnet: Stock_Carnet):
-    fake_db.append(carnet)
-    return carnet
-
-@app.get("/carnets/", response_model=List[Stock_Carnet])
-def list_carnets():
-    return fake_db
 
   
