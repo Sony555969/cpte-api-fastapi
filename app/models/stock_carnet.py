@@ -8,7 +8,5 @@ class Stock_Carnet(SQLModel, table=True):
     quantite_disponible: int = Field(default=0)
     numero_serie_debut: Optional[str] = None
     numero_serie_fin: Optional[str] = None
-    taille_carnet: Optional[int] = Field(default=50)
-    statut: Optional[str] = Field(default="disponible")
-
-
+    taille_carnet: int = Field(default=50)   # ✅ corrigé ici
+    statut: str = Field(default="disponible")  # ✅ pas Optional
