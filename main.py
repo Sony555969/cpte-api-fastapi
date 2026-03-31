@@ -8,7 +8,7 @@ from app.api.consulter_routes import router as Consulter_router
 from app.api.demandes_routes import router as Demande_router
 from app.api.distribution_routes import router as Distribution_router
 from app.api.epuiser_routes import router as Epuiser_router
-from app.core.db import init_db
+#from app.core.db import init_db
 from app.api.auth_routes import router as auth_router
 from app.api.checking_routes import router_qr,router_verifier
 from fastapi.staticfiles import StaticFiles
@@ -22,7 +22,7 @@ async def lifespan(app:FastAPI):
     #code execute au demmarrage
     
     print("Application en cours de demarrage...")
-    init_db()
+    #init_db()
     yield
     
     #code execute a l'arret
