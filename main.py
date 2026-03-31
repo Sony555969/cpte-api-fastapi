@@ -35,7 +35,7 @@ app = FastAPI(lifespan=lifespan,title="GESTION DES IMPRIMES DE VALEUR", version=
 # Monter le dossier externe 
 # Attention: sur Windows, utilise un chemin absolu valide 
 
-app.mount("/qrcodes", StaticFiles(directory="C:/qrcodes"), name="qrcodes")
+app.mount("/qrcodes", StaticFiles(directory="qrcodes"), name="qrcodes")
 
 app.add_middleware(
     CORSMiddleware,
